@@ -8,7 +8,8 @@ import joblib
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "..", "data", "mutual_fund_dataset.csv")
-df = pd.read_csv(DATA_PATH)
+dataFrame = pd.read_csv(DATA_PATH)
+df = dataFrame
 
 columns = ['min_sip', 'risk_level', 'category', 'returns_1yr', 'returns_3yr', 'returns_5yr']
 df = df[columns].copy()
@@ -39,6 +40,6 @@ vector_matrix = cv.fit_transform(df['combined_features'])
 
 
 
-joblib.dump(cv, "model/vectorizer.pkl")
-joblib.dump(vector_matrix, "model/vector_matrix.pkl")
-joblib.dump(df, "model/dataFrame.pkl")
+joblib.dump(cv, "models/vectorizer.pkl")
+joblib.dump(vector_matrix, "models/vector_matrix.pkl")
+joblib.dump(dataFrame, "models/dataFrame.pkl")

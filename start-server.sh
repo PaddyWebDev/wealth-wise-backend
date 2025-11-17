@@ -6,6 +6,10 @@ set -e
 # Optional: activate virtual environment (uncomment if needed)
 source .venv/Scripts/activate
 
+py models/lumpSum_based_recommendation.py
+py models/sip_based_recommendation.py
+
+
 # Set Flask environment variables
 export FLASK_APP=app.py
 export FLASK_ENV=development
